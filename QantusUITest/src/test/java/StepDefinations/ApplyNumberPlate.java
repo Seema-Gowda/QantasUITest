@@ -26,19 +26,7 @@ public class ApplyNumberPlate {
         sn = new ServiceNSW(driver);
     }
 
-    @When("^I search for (.+?)$")
-    public void iSearchFor(String searchTask) {
-        sn.setSearchTask(searchTask);
-        sn.clickSearchButton();
-    }
-
-    @When("^I Navigate to the searched page$")
-    public void iNavigateToTheSearchedPage() {
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Assert.assertTrue("Search Results | Service NSW".equalsIgnoreCase(driver.getTitle()));
-    }
-
-    @When("^I Click on locate us Button$")
+    @When("^I click on find location link$")
     public void iClickOnLocateUsButton() {
         sn.clickLocateUs();
     }

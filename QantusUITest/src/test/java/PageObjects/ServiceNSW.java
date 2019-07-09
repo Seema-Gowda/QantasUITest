@@ -1,15 +1,12 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class ServiceNSW {
 
     public WebDriver driver;
-    By searchTask = By.xpath("//*[@id=\"edit-contains\"]");
-    By searchButton = By.id("edit-submit-site-search");
-    By locateUsLink = By.linkText("Locate us");
+    By findlocation = By.cssSelector("nav#block-global-header-menu li:nth-child(3) > a");
 
     /**
      * Constructor to initialise the driver
@@ -20,25 +17,10 @@ public class ServiceNSW {
     }
 
     /**
-     * Function to search for "Apply for a number plate"
-     * @param task
-     */
-    public void setSearchTask(String task) {
-        driver.findElement(searchTask).sendKeys(task, Keys.TAB);
-    }
-
-    /**
-     * Function to click on Search Button
-     */
-    public void clickSearchButton() {
-        driver.findElement(searchButton).click();
-    }
-
-    /**
      * Function to click on locate us
      */
     public void clickLocateUs() {
-        driver.findElement(locateUsLink).click();
+        driver.findElement(findlocation).click();
     }
 
 }
